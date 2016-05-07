@@ -1,3 +1,4 @@
+
 def add():
     print('Enter first value: ')
     a = int(input())
@@ -40,7 +41,8 @@ def divide():
 
 choiceNumber = 0
 while choiceNumber < 5:
-    print('Choices: add, subtract, multiply, divide') 
+    print('Choices: add, subtract, multiply, divide')
+    print('Type "exit" to exit the outupt terminal.') 
     print('Enter an operation: ')
     choice = input()
     choiceNumber = choiceNumber + 1
@@ -48,13 +50,15 @@ while choiceNumber < 5:
     if choice == 'add':
         print('You chose, ' + choice)
         add()
-    if choice == 'subtract':
+    elif choice == 'subtract':
         print('You chose, ' + choice)
         subtract()
-    if choice == "multiply":
+    elif choice == "multiply":
         print('You chose, ' + choice)
         multiply()
-    if choice == 'divide':
+    elif choice == 'divide':
         print('You chose, ' + choice)
-        divide() 
-    
+        divide()
+    elif choice == 'exit':
+        print('Sad to see you go, goodbye!') 
+        exit() 
