@@ -21,8 +21,8 @@ class Application(Frame):
         self.valueB = Entry(self) 
         self.valueB.grid(row = 1, column = 1 , sticky = W)
 
-        self.submit_button = Button(self, text = "(+) Add", command = self.add)
-        self.submit_button.grid(row = 2, column = 0, sticky = W)
+        self.add_button = Button(self, text = "(+) Add", command = self.add)
+        self.add_button.grid(row = 2, column = 0, sticky = W)
 
         self.subtract_button = Button(self, text = "(-) Subtract", command = self.subtract)
         self.subtract_button.grid(row = 3, column = 0, sticky = W)
