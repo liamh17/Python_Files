@@ -21,7 +21,7 @@ while guessesTaken < 20:
     elif guess > number:
         print('Too high, try again: ')
     if guess == number:
-        break
+        #break
 
 if guess == number:
     guessesTaken = str(guessesTaken)
