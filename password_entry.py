@@ -20,15 +20,21 @@ class Application(Frame):
         self.submit_button = Button(self, text = "Submit", command = self.reveal)
         self.submit_button.grid(row = 2, column = 0, sticky = W)
 
-        self.text = Text(self, width = 35, height = 5, wrap = WORD)
-        self.text.grid(row = 3, column = 0, columnspan = 2, sticky = W) 
+        #self.close_button = Button(self, text = "Close", command = self.quit)
+        #self.close_button.grid(row = 2, column = 0, sticky = E)
 
+        self.text = Text(self, width = 35, height = 5, wrap = WORD)
+        self.text.grid(row = 3, column = 0, columnspan = 2, sticky = W)
+
+    def quit(self):
+        self.destroy() 
+        
     def reveal(self):
         """ Display message based on password typed in """
         content = self.password.get()
 
-        if content == "gabrielle":
-            message = "Access granted."
+        if content == "gab":
+            message = "Access granted." 
             #print("Rerun script.")
         else:
             message = "Access denied."
