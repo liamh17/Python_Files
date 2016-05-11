@@ -6,3 +6,5 @@
 file = "C:\\Users\\liamh\\Desktop\\Misc\\Random\\linuxIsCool.txt"
 text = open(file, 'r')
 print(text.read())
+
+#add write file as well
