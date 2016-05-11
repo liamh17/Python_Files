@@ -14,7 +14,7 @@ while guessesTaken < 20:
     guess = input()
     guess = int(guess)
 
-    guessesTaken =guessesTaken + 1
+    guessesTaken = guessesTaken + 1
 
     if guess < number:
         print('Too low, try again: ')

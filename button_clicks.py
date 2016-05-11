@@ -21,8 +21,12 @@ class Application(Frame):
     def update_count(self):
         """ Increate the click count and display new total """
         self.button_clicks += 1
-        self.button["text"] = "Total clicks: " + str(self.button_clicks) 
+        self.button["text"] = "Total clicks: " + str(self.button_clicks)
 
+        if self.button_clicks > 5:
+            print('Too many clicks!')
+            self.destroy()
+            self.inconify()
 root = Tk()
 root.title("Button testing")
 root.geometry("200x85")
