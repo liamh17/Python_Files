@@ -27,28 +27,28 @@ class Application(Frame):
 
         self.add_button = Button(self, text = "(+) Add", command = self.add)
         self.add_button.grid(row = 2, column = 0, sticky = W)
-
         self.subtract_button = Button(self, text = "(-) Subtract", command = self.subtract)
         self.subtract_button.grid(row = 3, column = 0, sticky = W)
-
         self.multiply_button = Button(self, text = "(*) Multiply", command = self.multiply)
         self.multiply_button.grid(row = 4, column = 0, sticky = W)
-
         self.divide_button = Button(self, text = "(÷) Divide", command = self.divide)
         self.divide_button.grid(row = 5, column = 0, sticky = W)
 
         self.rect_area_button = Button(self, text = "Rect Area", command = self.rectangle_area)
         self.rect_area_button.grid(row = 2, column = 1, sticky = W)
-
         self.rect_perim_button = Button(self, text = "Rect Perim", command = self.rectangle_perim)
         self.rect_perim_button.grid(row = 3, column = 1, sticky = W)
 
         self.circle_circum_button = Button(self, text = "Circle Circum", command = self.circle_circum)
         self.circle_circum_button.grid(row = 4, column = 1, sticky = W)
-
         self.circle_area_button = Button(self, text = "Circle Area", command = self.circle_area)
         self.circle_area_button.grid(row = 5, column = 1, sticky = W)
-
+        
+        self.tri_area_button = Button(self, text = "Tri Area", command = self.tri_area) 
+        self.tri_area_button.grid(row = 2, column = 2, sticky = W)
+        self.tri_perim_button = Button(self, text = "Trip Perim", command = self.tri_perim)
+        self.tri_perim_button.grid(row = 3, column = 2, sticky = W) 
+    
         #self.close_button = Button(self, text = "Close", command = self.quit)
         #self.close_button.grid(row = 2, column = 0, sticky = E)
 
@@ -163,6 +163,37 @@ class Application(Frame):
         message = "PI * " + radius + "^2 = " + area
         self.text.delete(0.0, END)
         self.text.insert(0.0, message)
+
+    def tri_area(self):
+        #1/2B * H
+        base = int(self.valueA.get())
+        leg1 = int(self.valueB.get())
+        #leg2 = int(self.valueC.get())
+        area = (base / 2) * leg1
+
+        area = str(area)
+        base = str(base)
+        height = str(leg1)
+
+        message = "" + base + "/ 2 * " + height + " = " + area
+        self.text.delete(0.0, END)
+        self.text.insert(0.0, message)
+
+    def tri_perim(self):
+        base = int(self.valueB.get())
+        leg1 = int(self.valueA.get())
+        leg2 = int(self.valueB.get())
+        perim = base + leg1 + leg2
+
+        perim = str(perim)
+        base = str(base)
+        leg1 = str(leg1)
+        leg2 = str(leg2)
+
+        message = "" + base + " + " + leg1 + " + " + leg2 + " = " + perim
+        self.text.delete(0.0, END)
+        self.text.insert(0.0, message) 
+        
         
 root = Tk()
 root.title("Calculator entry")
