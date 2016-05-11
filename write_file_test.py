@@ -1,10 +1,8 @@
-#use double quotes
-#use double slashes
+file = open("C:\\Users\\liamh\\Desktop\\Misc\\Random\\newfile.txt", "w")
 
-#insert file you wish to read here:
+file.write("Hello, this is a test.")
+file.write("It's going well, or atleast I'd say so.")
+file.write("Okay then, goodbye now.")
 
-file = "C:\\Users\\liamh\\Desktop\\Misc\\Random\\linuxIsCool.txt"
-text = open(file, 'r')
-print(text.read())
+file.close() 
 
-#add write file as well

@@ -15,11 +15,15 @@ class Application(Frame):
         self.instruction.grid(row = 0, column = 0, columnspan = 2, sticky = W)
         self.instruction = Label(self, text = "Enter your second value:")
         self.instruction.grid(row = 0, column = 1, columnspan = 2, sticky = W)
+        self.instruction = Label(self, text = "Enter your third value:")
+        self.instruction.grid(row = 0, column = 2, columnspan = 2, sticky = W)
 
         self.valueA = Entry(self) 
         self.valueA.grid(row = 1, column = 0, sticky = W)
         self.valueB = Entry(self) 
         self.valueB.grid(row = 1, column = 1 , sticky = W)
+        self.valueC = Entry(self)
+        self.valueC.grid(row = 1, column = 2, sticky = W)       
 
         self.add_button = Button(self, text = "(+) Add", command = self.add)
         self.add_button.grid(row = 2, column = 0, sticky = W)
@@ -162,7 +166,7 @@ class Application(Frame):
         
 root = Tk()
 root.title("Calculator entry")
-root.geometry("400x250")
+root.geometry("500x250")
 app = Application(root)
 
 root.mainloop()
