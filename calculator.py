@@ -1,4 +1,5 @@
 from tkinter import *
+import math
 
 class Application(Frame):
     """ GUI Application with buttons. """
@@ -47,7 +48,14 @@ class Application(Frame):
         self.tri_area_button = Button(self, text = "Tri Area", command = self.tri_area) 
         self.tri_area_button.grid(row = 2, column = 2, sticky = W)
         self.tri_perim_button = Button(self, text = "Trip Perim", command = self.tri_perim)
-        self.tri_perim_button.grid(row = 3, column = 2, sticky = W) 
+        self.tri_perim_button.grid(row = 3, column = 2, sticky = W)
+
+        self.pythag_c_button = Button(self, text = "Pythag sC", command = self.pythag_c)
+        self.pythag_c_button.grid(row = 4, column = 2, sticky = W)
+        self.pythag_a_button = Button(self, text = "Pythag sA", command = self.pythag_a)
+        self.pythag_a_button.grid(row = 5, column = 2, sticky = W)
+        self.pythag_b_button = Button(self, text = "Pythag sB", command = self.pythag_b)
+        self.pythag_b_button.grid(row = 2, column = 4, sticky = W)
     
         #self.close_button = Button(self, text = "Close", command = self.quit)
         #self.close_button.grid(row = 2, column = 0, sticky = E)
@@ -182,18 +190,89 @@ class Application(Frame):
     def tri_perim(self):
         base = int(self.valueB.get())
         leg1 = int(self.valueA.get())
-        leg2 = int(self.valueB.get())
+        leg2 = int(self.valueC.get())
         perim = base + leg1 + leg2
 
         perim = str(perim)
         base = str(base)
         leg1 = str(leg1)
         leg2 = str(leg2)
-
+        
         message = "" + base + " + " + leg1 + " + " + leg2 + " = " + perim
+
+        if leg2 is None:
+            message = "Please enter value for 2nd leg." 
+        self.text.delete(0.0, END)
+        self.text.insert(0.0, message)
+
+    def pythag_c(self):
+        #a^2 + b^2 = c^2
+        #solve for c^2
+        a = int(self.valueA.get())
+        b = int(self.valueB.get())
+
+        a_sq = a * a
+        b_sq = b * b
+
+        c_sq = a_sq + b_sq
+        c = math.sqrt(c_sq)
+
+        a = str(a)
+        a_sq = str(a_sq)
+        b = str(b)
+        b_sq = str(b_sq)
+        c = str(c)
+        c_sq = str(c_sq) 
+
+        message = "" + a_sq + " + " + b_sq + " = " + c_sq + ", c = " + c
         self.text.delete(0.0, END)
         self.text.insert(0.0, message) 
-        
+
+    def pythag_a(self):
+        #a^2 + b^2 = c^2
+        #solve for c^2
+        c = int(self.valueA.get())
+        b = int(self.valueB.get())
+
+        c_sq = c * c
+        b_sq = b * b
+
+        a_sq = c_sq - b_sq
+        a = math.sqrt(a_sq)
+
+        a = str(a)
+        a_sq = str(a_sq)
+        b = str(b)
+        b_sq = str(b_sq)
+        c = str(c)
+        c_sq = str(c_sq) 
+
+        message = "" + c_sq + " - " + b_sq + " = " + a_sq + ", c = " + a
+        self.text.delete(0.0, END)
+        self.text.insert(0.0, message)
+
+    def pythag_b(self):
+        #a^2 + b^2 = c^2
+        #solve for c^2
+        c = int(self.valueA.get())
+        a = int(self.valueB.get())
+
+        a_sq = a * a
+        c_sq = c * c
+
+        b_sq = c_sq - a_sq
+        b = math.sqrt(b_sq)
+
+        a = str(a)
+        a_sq = str(a_sq)
+        b = str(b)
+        b_sq = str(b_sq)
+        c = str(c)
+        c_sq = str(c_sq) 
+
+        message = "" + c_sq + " - " + a_sq + " = " + b_sq + ", c = " + b
+        self.text.delete(0.0, END)
+        self.text.insert(0.0, message)
         
 root = Tk()
 root.title("Calculator entry")
