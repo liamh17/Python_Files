@@ -230,7 +230,7 @@ class Application(Frame):
 
     def pythag_a(self):
         #a^2 + b^2 = c^2
-        #solve for c^2
+        #solve for a
         c = int(self.valueA.get())
         b = int(self.valueB.get())
 
@@ -252,8 +252,8 @@ class Application(Frame):
         self.text.insert(0.0, message)
 
     def pythag_b(self):
-        #a^2 + b^2 = c^2
-        #solve for c^2
+        #a^2 + b^2 = c^
+        #solve for b
         c = int(self.valueA.get())
         a = int(self.valueB.get())
 
