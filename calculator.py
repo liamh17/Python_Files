@@ -68,8 +68,8 @@ class Application(Frame):
         
     def add(self):
         """ Display message based on password typed in """
-        addend1 = int(self.valueA.get())
-        addend2 = int(self.valueB.get())
+        addend1 = float(self.valueA.get())
+        addend2 = float(self.valueB.get())
         
         sum = addend1 + addend2
 
@@ -82,8 +82,8 @@ class Application(Frame):
         self.text.insert(0.0, message)
 
     def subtract(self):
-        minuend = int(self.valueA.get())
-        subtrahend = int(self.valueB.get())
+        minuend = float(self.valueA.get())
+        subtrahend = float(self.valueB.get())
         difference = minuend - subtrahend
 
         difference = str(difference)
@@ -95,8 +95,8 @@ class Application(Frame):
         self.text.insert(0.0, message)
 
     def multiply(self):
-        factor1 = int(self.valueA.get())
-        factor2 = int(self.valueB.get())
+        factor1 = float(self.valueA.get())
+        factor2 = float(self.valueB.get())
         product = factor1 * factor2
 
         product = str(product)
@@ -108,8 +108,8 @@ class Application(Frame):
         self.text.insert(0.0, message) 
 
     def divide(self):
-        dividend = int(self.valueA.get())
-        divisor = int(self.valueB.get())
+        dividend = float(self.valueA.get())
+        divisor = float(self.valueB.get())
         quotient = dividend / divisor
 
         quotient = str(quotient)
@@ -122,8 +122,8 @@ class Application(Frame):
 
     def rectangle_area(self):
         # l * w
-        length = int(self.valueA.get())
-        width = int(self.valueB.get())
+        length = float(self.valueA.get())
+        width = float(self.valueB.get())
         area = length * width
 
         length = str(length)
@@ -136,8 +136,8 @@ class Application(Frame):
 
     def rectangle_perim(self):
         # 2(l) + 2(w)
-        length = int(self.valueA.get())
-        width = int(self.valueB.get())
+        length = float(self.valueA.get())
+        width = float(self.valueB.get())
         perim = (2 * length) + (2 * width)
 
         length = str(length)
@@ -150,7 +150,7 @@ class Application(Frame):
 
     def circle_circum(self):
         # 2 PI r
-        radius = int(self.valueA.get())
+        radius = float(self.valueA.get())
         circum = (2 * radius) * 3.1415
 
         circum = str(circum)
@@ -162,7 +162,7 @@ class Application(Frame):
 
     def circle_area(self):
         # PI * r^2
-        radius = int(self.valueA.get())
+        radius = float(self.valueA.get())
         area = (radius * radius) * 3.1415
 
         area = str(area)
@@ -174,9 +174,9 @@ class Application(Frame):
 
     def tri_area(self):
         #1/2B * H
-        base = int(self.valueA.get())
-        leg1 = int(self.valueB.get())
-        #leg2 = int(self.valueC.get())
+        base = float(self.valueA.get())
+        leg1 = float(self.valueB.get())
+        #leg2 = float(self.valueC.get())
         area = (base / 2) * leg1
 
         area = str(area)
@@ -188,9 +188,9 @@ class Application(Frame):
         self.text.insert(0.0, message)
 
     def tri_perim(self):
-        base = int(self.valueB.get())
-        leg1 = int(self.valueA.get())
-        leg2 = int(self.valueC.get())
+        base = float(self.valueB.get())
+        leg1 = float(self.valueA.get())
+        leg2 = float(self.valueC.get())
         perim = base + leg1 + leg2
 
         perim = str(perim)
@@ -208,8 +208,8 @@ class Application(Frame):
     def pythag_c(self):
         #a^2 + b^2 = c^2
         #solve for c^2
-        a = int(self.valueA.get())
-        b = int(self.valueB.get())
+        a = float(self.valueA.get())
+        b = float(self.valueB.get())
 
         a_sq = a * a
         b_sq = b * b
@@ -231,8 +231,8 @@ class Application(Frame):
     def pythag_a(self):
         #a^2 + b^2 = c^2
         #solve for a
-        c = int(self.valueA.get())
-        b = int(self.valueB.get())
+        c = float(self.valueA.get())
+        b = float(self.valueB.get())
 
         c_sq = c * c
         b_sq = b * b
@@ -254,8 +254,8 @@ class Application(Frame):
     def pythag_b(self):
         #a^2 + b^2 = c^
         #solve for b
-        c = int(self.valueA.get())
-        a = int(self.valueB.get())
+        c = float(self.valueA.get())
+        a = float(self.valueB.get())
 
         a_sq = a * a
         c_sq = c * c

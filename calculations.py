@@ -1,13 +1,14 @@
 
 def add():
     print('Enter first value: ')
-    a = int(input())
+    a = float(input())
     print('Enter second value: ')
-    b = int(input())
+    b = float(input())
 
     sum = a + b
     sum = str(sum)
-    print('The sum is: ' + sum) 
+    print('The sum is: ' + sum)
+    print('--------------------------')
 
 def subtract():
     print('Enter first value: ')
@@ -17,7 +18,8 @@ def subtract():
 
     difference = a - b
     difference = str(difference)
-    print('The difference is: ' + difference)  
+    print('The difference is: ' + difference)
+    print('--------------------------')
     
 def multiply():
     print('Enter first value: ')
@@ -27,7 +29,8 @@ def multiply():
         
     product = a * b
     product = str(product)
-    print('The product is: ' + product) 
+    print('The product is: ' + product)
+    print('--------------------------')
 
 def divide():
     print('Enter first value: ')
@@ -37,7 +40,8 @@ def divide():
 
     quotient = a / b
     quotient = str(quotient)
-    print('The quotient is: ' + quotient) 
+    print('The quotient is: ' + quotient)
+    print('--------------------------')
 
 choiceNumber = 0
 while choiceNumber < 5:
