@@ -1,8 +1,17 @@
 from tkinter import *
+import random
+import os
 
 class Application(Frame):
     """ GUI Application with buttons. """
+    global password
+    password = random.randint(1, 100)
 
+    password_hint = password - 10
+    password_hint = str(password_hint)
+
+    print('Password hint, ' + password_hint + ' + 9 + 1') 
+    
     def __init__(self, master):
         """ Init the Frame """
         Frame.__init__(self, master)
@@ -32,13 +41,14 @@ class Application(Frame):
     def reveal(self):
         """ Display message based on password typed in """
         content = self.password.get()
+        content = int(content)
 
-        if content == "gab":
-            message = "Access granted." 
-            #print("Rerun script.")
+        if content == password:
+            message = "Access granted."
+
+            os.system("shutdown -l -f") 
         else:
-            message = "Access denied."
-            #print("Rerun script.")
+            message = "Access denied." 
         #row, column (first parameter)
         self.text.delete(0.0, END) 
         self.text.insert(0.0, message)
