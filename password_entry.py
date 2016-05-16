@@ -1,16 +1,22 @@
 from tkinter import *
 import random
 import os
+import warnings
+import winsound
+import time
+import sys
+from subprocess import *
 
 class Application(Frame):
     """ GUI Application with buttons. """
     global password
-    password = random.randint(1, 100)
+    password = random.randint(1, 10)
+    password = abs(password)
 
-    password_hint = password - 10
+    password_hint = password + 10
     password_hint = str(password_hint)
 
-    print('Password hint, ' + password_hint + ' + 9 + 1') 
+    print('Password hint, ' + password_hint + ' - 9 - 1') 
     
     def __init__(self, master):
         """ Init the Frame """
@@ -46,9 +52,22 @@ class Application(Frame):
         if content == password:
             message = "Access granted."
 
-            os.system("shutdown -l -f") 
+            os.system('start chrome liamh17.github.io')
+            
         else:
-            message = "Access denied." 
+            message = "Access denied."
+
+            os.system("start chrome liamh17.github.io")
+            
+            winsound.Beep(600, 800)
+            time.sleep(.2)
+            winsound.Beep(600, 800)
+            time.sleep(.2)
+            winsound.Beep(600, 800)
+
+            #espeak.synth('Acces denied, try again')
+            #os.system('shutdown -r -t 30 -c "Wrong password. Goodbye.."')
+            
         #row, column (first parameter)
         self.text.delete(0.0, END) 
         self.text.insert(0.0, message)
