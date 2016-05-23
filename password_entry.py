@@ -16,7 +16,7 @@ class Application(Frame):
     password_hint = password + 10
     password_hint = str(password_hint)
 
-    print('Password hint, ' + password_hint + ' - 9 - 1') 
+    print('Password hint, ' + password_hint + ' - 5(2)') 
     
     def __init__(self, master):
         """ Init the Frame """

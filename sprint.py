@@ -17,9 +17,11 @@ while True:
         start_time = time.time()
         while distance < 100:
                 
-                k1 = msvcrt.getch().decode('ASCII')
+                k1 = input()
+                k1 = str(k1) 
                 if k1 == 'z':
-                        k2 = msvcrt.getch().decode('ASCII')
+                        k2 = input()
+                        k2 = str(k2) 
                         if k2 == 'x':
                                 distance += 1
                                 if distance == 50:

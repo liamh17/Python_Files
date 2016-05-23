@@ -5,7 +5,7 @@ class Application(Frame):
     """ GUI Application with buttons. """
 
     def __init__(self, master):
-        """ Init the Frame """
+        """ Init the Frame """  
         Frame.__init__(self, master)
         self.grid()
         self.create_widgets()
