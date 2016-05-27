@@ -93,6 +93,14 @@ class Application(Frame):
             command=self.incognito_chrome, height=2, width=12)
         self.incognito_chrome_button.grid(row=1, column=3, sticky=W)
 
+        self.wifi_password_button = Button(self, text="wifi password",
+            command=self.wifi_password, height=2, width=12)
+        self.wifi_password_button.grid(row=2, column=3, sticky=W)
+
+        self.kill_chrome_button = Button(self, text="kill chr + cmd",
+            command=self.kill_chrome_cmd, height=2, width=12)
+        self.kill_chrome_button.grid(row=3, column=3, sticky=W)
+
 ###############################################################################
 
     def exit_command(self):
@@ -158,6 +166,17 @@ class Application(Frame):
     def incognito_chrome(self):
         #starts incognito window
         os.system("start chrome -incognito")
+
+    def wifi_password(self):
+        #checks for wifi password for prev. connected network
+        #you may use different wireless network
+        os.system("netsh wlan show profiles Heisler6-5 key=clear")
+        print("Look at KEY CONTENT/SECURITY KEY")
+
+    def kill_chrome_cmd(self):
+        #kill any running chrome and command prompt tabs
+        #TODO: UPDATE TO POSSIBLY ALL TASKS
+        os.system("taskkill /IM chrome.exe /IM cmd.exe /F")
 
 ###############################################################################
 
