@@ -1,14 +1,38 @@
+'''
+ This is a simple password-entry GUI that detects whether
+ or not a correct password(random number from 1-10) is entered.
+
+ First, a password is entered into the Entry box, then is handled
+ by the program, comparing it to the random passwored genereated
+ by the random.randint function..
+
+ Second, once the submit button is clicked, a the text entered
+ is then comopared to the one generated. It then runs through a
+ simple series of if statements:
+
+ CONDITIONS:
+     if correct password is entered:
+        1) print to text box in GUI that correct pass was entered
+        2) send email via gmail to 17lheisler@fatherjudgestudent.com,
+            mentioning the access was granted
+        3) and open chrome gmail window/tab, thus "giving acccess"
+
+     elif incorrect password is entered:
+        1) print to text box in GUI that incorrect pass was entered
+        2) send email via gmail to 17lheisler@fatherjudgestudent.com,
+            mentioning the failed password attempt.
+        3) DO NOT OPEN CHROME WINDOW
+
+'''
+
 from tkinter import *
 import random
 import os
-import winsound
-import time
 import sys
 import smtplib
 
 
 class Application(Frame):
-    """ GUI y with buttons. """
     global password_entry
     password_entry = random.randint(1, 10)
     password_entry = abs(password_entry)
