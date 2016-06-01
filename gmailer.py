@@ -7,7 +7,7 @@ msg = 'There was a terrible error that occured and I wanted you to know!'
 
 # Credentials (if needed)
 username = '17lheisler@fatherjudgestudent.com'
-password = 'yohihey123'
+password = 'RESTRICTED'
 
 # The actual mail send
 server = smtplib.SMTP('smtp.gmail.com:587')
