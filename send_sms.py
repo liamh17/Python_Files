@@ -83,6 +83,14 @@ class Application(Frame):
             carrier = 'verizon'
             number = '2159901360'
 
+        if number == 'mark':
+            carrier = 'tmobile'
+            number = '2156998288'
+
+        if number == 'angelo':
+            carrier = 'verizon'
+            number = '2155821337'
+
         if carrier == 'verizon':
             to_addr = '' + number + '@vtext.com'
             to__addr = str(to_addr)
