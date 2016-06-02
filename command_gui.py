@@ -13,6 +13,8 @@
 
 from tkinter import *
 import os
+import smtplib
+import time
 
 
 class Application(Frame):
@@ -101,6 +103,15 @@ class Application(Frame):
             command=self.kill_chrome_cmd, height=2, width=12)
         self.kill_chrome_button.grid(row=3, column=3, sticky=W)
 
+        self.gmail_button = Button(self, text="gmail",
+            command=self.gmail, height=2, width=12)
+        self.gmail_button.grid(row=4, column=3, sticky=W)
+
+        self.sms_button = Button(self, text="send sms",
+            command=self.send_sms, height=2, width=12)
+        self.sms_button.grid(row=5, column=3, sticky=W)
+
+
 ###############################################################################
 
     def exit_command(self):
@@ -177,6 +188,15 @@ class Application(Frame):
         #kill any running chrome and command prompt tabs
         #TODO: UPDATE TO POSSIBLY ALL TASKS
         os.system("taskkill /IM chrome.exe /IM cmd.exe /F")
+
+    def gmail(self):
+        #open gmail
+        os.system("start chrome www.gmail.com")
+
+    def send_sms(self):
+        os.system("cd C:\\Users\\liamh\\Desktop\\Scripts")
+        os.system("start contacts.txt")
+        os.system("python send_sms.py")
 
 ###############################################################################
 

@@ -13,13 +13,13 @@
  CONDITIONS:
      if correct password is entered:
         1) print to text box in GUI that correct pass was entered
-        2) send email via gmail to 17lheisler@fatherjudgestudent.com,
+        2) send email via gmail to 2159179402@vtext.com,
             mentioning the access was granted
         3) and open chrome gmail window/tab, thus "giving acccess"
 
      elif incorrect password is entered:
         1) print to text box in GUI that incorrect pass was entered
-        2) send email via gmail to 17lheisler@fatherjudgestudent.com,
+        2) send email via gmail to 2159179402@vtext.com,
             mentioning the failed password attempt.
         3) DO NOT OPEN CHROME WINDOW
 
@@ -43,11 +43,12 @@ class Application(Frame):
     global server, fromaddr, toaddr, user, password
     server = smtplib.SMTP('smtp.gmail.com:587')
     fromaddr = '17lheisler@fatherjudgestudent.com'
-    toaddr = '17lheisler@fatherjudgestudent.com'
+    toaddr = '2159179402@vtext.com'
+
     user = '17lheisler@fatherjudgestudent.com'
     password = 'yohihey123'
 
-    print('Password hint, ' + password_hint + ' - 5(2)')
+    #print('Password hint, ' + password_hint + ' - 5(2)')
 
     def __init__(self, master):
         """ Init the Frame """
@@ -57,18 +58,18 @@ class Application(Frame):
 
     def create_widgets(self):
         """ Create button, text, and entry """
-        self.instruction = Label(self, text="Enter the password")
+        self.instruction = Label(self, text="Enter the password ")
         self.instruction.grid(row=0, column=0, columnspan=2, sticky=W)
 
         self.password_entry = Entry(self)
-        self.password_entry.grid(row=1, column=1, sticky=W)
+        self.password_entry.grid(row=0, column=1, sticky=W)
 
         self.submit_button = Button(self, text="Submit",
-            command=self.reveal, width=5)
+            command=self.reveal, width=10)
         self.submit_button.grid(row=2, column=0, sticky=W)
 
         self.exit_button = Button(self, text="Exit",
-            command=self.quit, width=5)
+            command=self.quit, width=10)
         self.exit_button.grid(row=2, column=1, sticky=W)
 
         #self.close_button = Button(self, text = "Close", command = self.quit)
@@ -84,9 +85,9 @@ class Application(Frame):
 
         """ Display message based on password typed in """
         content = self.password_entry.get()
-        content = int(content)
+        #content = int(content)
 
-        if content == password_entry:
+        if content == 'admin':
             #do something more with this
             message = "Access granted."
 
@@ -98,7 +99,7 @@ class Application(Frame):
             server.sendmail(fromaddr, toaddr, granted_msg)
 
             # will auto log onto gmail acc
-            os.system("start chrome www.gmail.com")
+            #os.system("start chrome www.gmail.com")
         else:
             # email text
             denied_msg = 'Someone failed to login to your secure system!'
@@ -116,7 +117,7 @@ class Application(Frame):
 
 root = Tk()
 root.title("Password entry")
-root.geometry("250x150")
+root.geometry("350x150")
 app = Application(root)
 
 root.mainloop()
