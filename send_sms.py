@@ -12,7 +12,7 @@ class Application(Frame):
     toaddr = '2159179402@vtext.com'
 
     user = '17lheisler@fatherjudgestudent.com'
-    password = 'yohihey123'
+    password = 'REDACTED'
 
     def __init__(self, master):
         """ Init the Frame """
